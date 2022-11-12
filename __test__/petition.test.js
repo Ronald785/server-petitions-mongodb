@@ -154,5 +154,23 @@ describe('petition', () => {
                     .expect(400);
             })
         });
+
+        describe('Sign Petition', () => {
+            it("Should return status 200", async () => {
+                await supertest(app)
+                .post(`/sign/petition/636bf1aaea5d770a83af40ab`)
+                .set('Authorization', 'h6OiwwYXQhI5ZTx0')
+                .expect(200);
+            })
+        });
+
+        describe('Sign Petition ERROR', () => {
+            it("Should return status 400", async () => {
+                await supertest(app)
+                    .post(`/sign/petition/636bf1aaea5d770a83af40ab`)
+                    .set('Authorization', 'h6OiwwYXQhI5ZTx0')
+                    .expect(400);
+            })
+        });
     })
 });
