@@ -1,0 +1,20 @@
+Petição Requisitos
+
+Título -> title
+Descrição -> description
+meta de assinaturas -> goal
+
+Quem criou -> creator
+data criação -> date
+numero de assinantes -> signatures
+id da petição
+
+Só quem criou pode editar e deletar
+Um usuário n pode assinar duas vezes a mesma petição
+
+Usuário
+Email
+Senha
+-> Criar token
+
+rotas

@@ -1,0 +1,29 @@
+{
+  "name": "server-petitions-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "16.13.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "joi": "^17.6.3",
+    "mongodb": "^4.10.0",
+    "rand-token": "^1.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.2.2",
+    "supertest": "^6.3.1"
+  }
+}
