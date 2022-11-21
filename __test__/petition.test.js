@@ -19,6 +19,22 @@ describe('petition', () => {
             })
         });
 
+        describe('Search petitions teste@gmail.com', () => {
+            it("Should return status 200", async () => {
+                await supertest(app)
+                .get(`/search/teste@gmail.com`)
+                .expect(200);
+            })
+        });
+
+        describe('Search petitions error', () => {
+            it("Should return status 404", async () => {
+                await supertest(app)
+                .get(`/search/aaaa@gmail.com`)
+                .expect(404);
+            })
+        });
+
         describe('Post Petition', () => {
             it("Should return status 200", async () => {
                 const data = {

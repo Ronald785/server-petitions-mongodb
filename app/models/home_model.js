@@ -14,6 +14,13 @@ module.exports = {
         });
         return petition;
     },
+    getPetitionsByEmail: async (email) => {
+        console.log(`[Model - Get Petitions By Email: ${email}]`);
+        const petitions = await client.db("dsw").collection("petitions").find({
+            creator: email
+        }).toArray();
+        return petitions;
+    },
     checkToken: async (token) => {
         console.log(`[Model - Check Token: ${token}]`);
         try {

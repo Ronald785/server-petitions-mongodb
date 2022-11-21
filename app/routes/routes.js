@@ -1,4 +1,4 @@
-const { home, addPetition, signPetition, viewPetition, updatePetition, deletPetition, createUser, loginUser } = require("../controllers/home_controller");
+const { home, addPetition, signPetition, viewPetition, viewPetitionByEmail, updatePetition, deletPetition, createUser, loginUser } = require("../controllers/home_controller");
 
 module.exports = {
     home: (app) => {
@@ -27,6 +27,12 @@ module.exports = {
         app.get('/petition/:id', (req, res) => {
             console.log("[Route View Petition]");
             viewPetition(app, req, res);
+        });
+    },
+    searchPetitionByEmail: (app) => {
+        app.get('/search/:email', (req, res) => {
+            console.log("[Route Search Petitions]");
+            viewPetitionByEmail(app, req, res);
         });
     },
     editPetition: (app) => {

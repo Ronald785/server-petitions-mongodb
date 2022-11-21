@@ -5,6 +5,7 @@ routes.home(app);
 routes.insertPetition(app);
 routes.signPetition(app);
 routes.searchPetition(app);
+routes.searchPetitionByEmail(app);
 routes.editPetition(app);
 routes.deletPetition(app);
 routes.createUser(app);

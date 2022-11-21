@@ -1,4 +1,4 @@
-const { getPetition, getPetitions, addPetition, addUser, checkToken, checkEmail, updatePetition, signPetition, deletPetition } = require("../models/home_model");
+const { getPetition, getPetitions, getPetitionsByEmail, addPetition, addUser, checkToken, checkEmail, updatePetition, signPetition, deletPetition } = require("../models/home_model");
 const Joi = require('joi');
 const randtoken = require('rand-token');
 
@@ -131,6 +131,21 @@ module.exports.viewPetition = async (app, req, res) => {
             return res.status(200).json(petition);
     } catch (error) {
         return res.status(404).json(`[Controller View Petition ${id} ERROR] - ${error}`);
+    }
+}
+
+//Search Petititon by Email
+module.exports.viewPetitionByEmail = async (app, req, res) => {
+    const email  = req.params.email;
+    console.log(`[Controller View Petition: ${email}]`);
+    try {
+        const petitions = await getPetitionsByEmail(email);
+        if(petitions.length > 0) 
+            return res.status(200).json(petitions);
+        else 
+            return res.status(404).json(`Não existe petições cadastradas com o email ${email}.`);
+    } catch (error) {
+        return res.status(404).json(`[Controller View Petitions ${email} ERROR] - ${error}`);
     }
 }
 
